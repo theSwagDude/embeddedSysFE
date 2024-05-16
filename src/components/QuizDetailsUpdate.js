@@ -9,6 +9,11 @@ const QuizDetailsUpdate = () => {
 
     let { catId, quizId } = useParams();
 
+    // const placeholderCat = [
+    //     {id: 1, categoryName: 'Math', description: 'Toán học'},
+    //     {id: 2, categoryName: 'Chemistry', description: 'Hóa học'}
+    //   ];
+
     const placeholderQuiz = {
         title: '',
         timeLimit: 0,
@@ -36,6 +41,7 @@ const QuizDetailsUpdate = () => {
 
     const [quiz, setQuiz] = useState(placeholderQuiz);
     const [categories, setCategories] = useState([]);
+    const [selectedCategoryId, setSelectedCategoryId] = useState();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -43,7 +49,7 @@ const QuizDetailsUpdate = () => {
         fetchCategory();
     }, []);
 
-    // async function fetchCategories() {
+    // async function fetchCategory() {
     //     try {
     //         await axios.get("http://localhost:8085/api/category",)
     //             .then((res) => {
@@ -94,25 +100,28 @@ const QuizDetailsUpdate = () => {
         }
     }
 
-    // const saveQuiz = async () => {
-    //     await addQuiz(quiz);
-    // };
+    const saveQuiz = async () => {
+        await updateQuiz(quiz);
+    };
 
-    // async function addQuiz(quiz) {
-    //     try {
-    //         await axios.post(`http://localhost:8085/api/quiz/${selectedCategoryId}`, quiz)
-    //             .then((res) => {
-    //                 console.log(res.data);
-    //                 alert("Success");
-    //                 navigate('/quiz');
-    //             }, fail => {
-    //                 console.error(fail);
-    //             });
-    //     }
-    //     catch (err) {
-    //         alert(err);
-    //     }
-    // }
+    async function updateQuiz(quiz) {
+
+        try {
+            if (window.confirm("Are you sure you want to update this category?")){
+            await axios.put(`http://localhost:8085/api/quiz/${quizId}`, quiz)
+                .then((res) => {
+                    console.log(res.data);
+                    alert("Success");
+                    navigate('/quiz');
+                }, fail => {
+                    console.error(fail);
+                });
+            }
+        }
+        catch (err) {
+            alert(err);
+        }
+    }
 
     // const handleCategoryChange = (event) => {
     //     setSelectedCategoryId(event.target.value);
@@ -180,21 +189,21 @@ const QuizDetailsUpdate = () => {
 
                                     </div>
                                 ))}
-                                {/* <button className='QuizDetails-button' onClick={() => {
+                                <button className='QuizDetails-button' onClick={() => {
                                     let newQuestions = [...quiz.questions];
                                     newQuestions[index].listAnswers.push({ answer: '', isCorrect: false });
                                     setQuiz({ ...quiz, questions: newQuestions });
-                                }}>Add New Answer</button> */}
+                                }}>Add New Answer</button>
 
                             </div>
                         ))}
-                        {/* <button className='QuizDetails-button yellow' onClick={() => {
+                        <button className='QuizDetails-button yellow' onClick={() => {
                             setQuiz({
                                 ...quiz,
                                 questions: [...quiz.questions, { question: '', level: '', maxTime: '', point: '', listAnswers: [{ answer: '', isCorrect: true }, { answer: '', isCorrect: false }] }]
                             });
-                        }}>Add New Question</button><br /><br></br> */}
-                        {/* <button className='QuizDetails-button green' onClick={saveQuiz}>Save Quiz</button> */}
+                        }}>Add New Question</button><br /><br></br>
+                        <button className='QuizDetails-button green' onClick={saveQuiz}>Save Quiz</button>
                     </div>
                 </div>
             </div>
