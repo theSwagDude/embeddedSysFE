@@ -1,0 +1,63 @@
+.AdminBG {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.AdminBG * {
+    font-family: "Verdana", cursive, sans-serif;
+    color: #000000;
+    font-size: 1.25em
+}
+
+.AdminBG {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.Admin {
+    background-color: #ffffff;
+    width: 500px;
+    min-height: 300px;
+    height: min-content;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 20px 20px 84px 0px rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column; /* Add this line */
+    justify-content: space-evenly;
+}
+
+.Admin-button {
+    width: 20%;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #2850df;
+    border-radius: 15px;
+    display: flex;
+    padding: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    border: 5px solid #2850df;
+    cursor: pointer;
+    font-size: 1.25em;
+    margin: 10px 0; 
+}
+
+.Admin-button:hover {
+    background-color: #04134c;
+}
+
+.Admin-button:focus {
+    outline: none;
+}
+
+.Admin-button svg {
+    margin-right: 5px;
+}

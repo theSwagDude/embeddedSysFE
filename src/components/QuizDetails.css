@@ -1,0 +1,117 @@
+/* Main container to avoid the sidebar */
+.main-container {
+    margin-left: 220px; /* Sidebar width */
+}
+
+/* Box for the quizDetails data */
+.quizDetails-data-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 5px; /* Reduced from 10px to 5px */
+}
+
+/* Box for each question */
+.question-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 5px; /* Reduced from 10px to 5px */
+}
+
+/* Input styling */
+.QuizDetails-input {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 5px;
+    width: 50%;
+    box-sizing: border-box;
+    margin-bottom: 5px; /* Reduced from 10px to 5px */
+}
+
+
+.field-container {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 5px; /* Reduced from 10px to 5px */
+}
+
+.field-container > div {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.field-container > div:last-child {
+    margin-right: 0;
+}
+
+.QuizDetails-button {
+    width: auto; /* Adjust as needed */
+    font-size: 10px;
+    color: #ffffff;
+    background-color: #2850df;
+    border-radius: 15px;
+    display: inline-flex;;
+    padding: 5px;
+    justify-content: center;
+    margin-right: 10px;
+    align-items: center;
+    border: 5px solid #2850df;
+    cursor: pointer;
+    font-size: 1.25em;
+    margin: 10px 0; 
+}
+
+.QuizDetails-button:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+}
+
+.QuizDetails-button:hover {
+    background-color: #04134c;
+}
+
+.QuizDetails-button:focus {
+    outline: none;
+}
+
+.QuizDetails-button svg {
+    margin-right: 5px;
+}
+
+.QuizDetails-button.yellow {
+    background-color: #d0ff00;
+    border-color: #d0ff00;
+}
+
+.QuizDetails-button.yellow:hover {
+    background-color: #d0cc00;
+}
+
+.QuizDetails-button.green {
+    background-color: #00ff00;
+    border-color: #00ff00;
+}
+
+.QuizDetails-button.green:hover {
+    background-color: #00cc00;
+}
+
+.category-select-details {
+    margin-top: 10px;
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    margin-left: 220px;
+    margin-top: 20px;
+}
+h3 {
+    padding-right: 20px; /* Adjust as needed */
+}
+
